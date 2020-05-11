@@ -56,18 +56,36 @@
 		    -webkit-animation-direction: alternate;
 		    animation-direction: alternate;
 		}
-		
-		button
-		{
-			font-size: 20px;
+
+		#button {
+			background-color: transparent;
+			border: none;
+			width: 100%;
+			height: 100%;
+			align-content: center;
+			font-weight: 200;
 		}
-		
-		@media only screen and (max-width: 600px) {
-        	button {
-    		font-size: 35px;
-  			}
+
+		@media screen and (max-width: 1680px) and (min-width: 846px) { 
+			#button {
+				font-size: 22px;
 			}
 
+		}
+
+
+
+		@media screen and (max-width: 845px) {        
+			#button {
+				font-size: 42px;
+			}
+
+		}
+
+
+
+
+	
 
 
 	</style>
@@ -78,7 +96,7 @@
 
 <body>
     <div>
-        <button id="button" style="background-color: transparent; border: none; width: 100%; height: 100%; align-content: center;">START MUSIC</button>
+        <button id="button" >START MUSIC</button>
       </div>
 
       <audio id="player">
