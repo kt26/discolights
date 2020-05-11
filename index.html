@@ -1,0 +1,94 @@
+<html>
+
+<head>
+	<style>
+		@keyframes bgcolor {
+		    0% {
+		        background-color: #45a3e5
+		    }
+			
+			10% {
+		        background-color: #ff4ef6
+		    }
+			
+			20% {
+		        background-color: #9fffbc
+		    }
+			
+			30% {
+		        background-color: #ff0000
+		    }
+		
+		    40% {
+		        background-color: #f8f8f8
+		    }
+			
+			50% {
+		        background-color: #ffaf1c
+		    }
+		
+		
+		    60% {
+		        background-color: #eb670f
+		    }
+		
+		    70% {
+		        background-color: rgb(144, 47, 255)
+		    }
+
+            80% {
+		        background-color: rgb(234, 1, 255)
+		    }
+
+
+            90% {
+		        background-color: rgb(31, 253, 68)
+		    }
+		
+		    100% {
+		        background-color: #fffc3c
+		    }
+		}
+		
+		body {
+		    -webkit-animation: bgcolor 20s infinite;
+		    animation: bgcolor 10s infinite;
+		    -webkit-animation-direction: alternate;
+		    animation-direction: alternate;
+		}
+
+
+	</style>
+	<title>DISCO LIGHTS</title>
+	<link rel="shortcut icon" type="image/jpg" href="disco.png" />
+</head>
+
+
+<body>
+    <div>
+        <button id="button" style="background-color: transparent; border: none; width: 100%; height: 100%; align-content: center; font-size: 20px;">START MUSIC</button>
+      </div>
+
+      <audio id="player">
+        <source src='song.mp3' type='audio/mpeg'/>
+      </audio> 
+
+          
+</body>
+<script>
+    var button = document.getElementById("button");
+    var audio = document.getElementById("player");
+
+    button.addEventListener("click", function(){
+    if(audio.paused){
+        audio.play();
+        button.innerHTML = "PAUSE MUSIC";
+    } else {
+        audio.pause();
+        button.innerHTML = "PLAY MUSIC";
+    }
+    });
+</script>
+
+
+</html>
