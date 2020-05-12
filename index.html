@@ -1,124 +1,131 @@
 <html>
 
-<head>
-	<style>
-		@keyframes bgcolor {
-		    0% {
-		        background-color: #45a3e5
-		    }
+	<head>
+		
+		<style>
+
+			@keyframes bgcolor {
+				0% {
+					background-color: #45a3e5
+				}
+				
+				10% {
+					background-color: #ff4ef6
+				}
+				
+				20% {
+					background-color: #9fffbc
+				}
+				
+				30% {
+					background-color: #ff0000
+				}
 			
-			10% {
-		        background-color: #ff4ef6
-		    }
+				40% {
+					background-color: #f8f8f8
+				}
+				
+				50% {
+					background-color: #ffaf1c
+				}
 			
-			20% {
-		        background-color: #9fffbc
-		    }
 			
-			30% {
-		        background-color: #ff0000
-		    }
-		
-		    40% {
-		        background-color: #f8f8f8
-		    }
+				60% {
+					background-color: #eb670f
+				}
 			
-			50% {
-		        background-color: #ffaf1c
-		    }
-		
-		
-		    60% {
-		        background-color: #eb670f
-		    }
-		
-		    70% {
-		        background-color: rgb(144, 47, 255)
-		    }
+				70% {
+					background-color: rgb(144, 47, 255)
+				}
 
-            80% {
-		        background-color: rgb(234, 1, 255)
-		    }
+				80% {
+					background-color: rgb(234, 1, 255)
+				}
 
 
-            90% {
-		        background-color: rgb(31, 253, 68)
-		    }
-		
-		    100% {
-		        background-color: #fffc3c
-		    }
-		}
-		
-		body {
-		    -webkit-animation: bgcolor 20s infinite;
-		    animation: bgcolor 10s infinite;
-		    -webkit-animation-direction: alternate;
-		    animation-direction: alternate;
-		}
-
-		#button {
-			background-color: transparent;
-			border: none;
-			width: 100%;
-			height: 100%;
-			align-content: center;
-		}
-
-		@media screen and (max-width: 1680px) and (min-width: 846px) { 
-			#button {
-				font-size: 18px;
+				90% {
+					background-color: rgb(31, 253, 68)
+				}
+			
+				100% {
+					background-color: #fffc3c
+				}
 			}
 
-		}
-
-
-
-		@media screen and (max-width: 1000px) {        
-			#button {
-				font-weight: 300;
-				font-size: 42px;
+			
+			body {
+				-webkit-animation: bgcolor 20s infinite;
+				animation: bgcolor 10s infinite;
+				-webkit-animation-direction: alternate;
+				animation-direction: alternate;
 			}
 
-		}
+
+			#button {
+				background-color: transparent;
+				border: none;
+				width: 100%;
+				height: 100%;
+				align-content: center;
+			}
 
 
+			@media screen and (max-width: 1680px) and (min-width: 846px) { 
+				#button {
+					font-size: 18px;
+				}
 
+			}
+
+
+			@media screen and (max-width: 1000px) {        
+				#button {
+					font-weight: 300;
+					font-size: 42px;
+				}
+
+			}
+
+
+		</style>
+
+		<title>DISCO LIGHTS</title>
+
+		<link rel="shortcut icon" type="image/jpg" href="disco.png" />
+
+	</head>
+
+
+	<body>
+		
+		<div>
+			<button id="button" >CLICK ON SCREEN TO START MUSIC</button>
+		</div>
+
+		<audio id="player">
+			<source src='song.mp3' type='audio/mpeg'/>
+		</audio> 
+
+			
+	</body>
 
 	
+	<script>
 
+		var button = document.getElementById("button");
+		var audio = document.getElementById("player");
 
-	</style>
-	<title>DISCO LIGHTS</title>
-	<link rel="shortcut icon" type="image/jpg" href="disco.png" />
-</head>
+		button.addEventListener("click", function(){
+		if(audio.paused){
+			audio.play();
+			button.innerHTML = "PAUSE MUSIC";
+		} else {
+			audio.pause();
+			button.innerHTML = "PLAY MUSIC";
+		}
+		});
 
-
-<body>
-    <div>
-        <button id="button" >CLICK ON SCREEN TO START MUSIC</button>
-      </div>
-
-      <audio id="player">
-        <source src='song.mp3' type='audio/mpeg'/>
-      </audio> 
-
-          
-</body>
-<script>
-    var button = document.getElementById("button");
-    var audio = document.getElementById("player");
-
-    button.addEventListener("click", function(){
-    if(audio.paused){
-        audio.play();
-        button.innerHTML = "PAUSE MUSIC";
-    } else {
-        audio.pause();
-        button.innerHTML = "PLAY MUSIC";
-    }
-    });
-</script>
+	</script>
 
 
 </html>
